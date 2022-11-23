@@ -3,7 +3,7 @@ Book Store
 ## EC2 접속주소
 
 ```shell
-ec2-43-201-101-29.ap-northeast-2.compute.amazonaws.com:3306/api/v1/books
+ec2-43-201-101-29.ap-northeast-2.compute.amazonaws.com:8080/api/v1/books
 ```
 
 
