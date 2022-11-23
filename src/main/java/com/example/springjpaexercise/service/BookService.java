@@ -23,8 +23,8 @@ public class BookService {
         this.authorRepository = authorRepository;
     }
 
-    public List<BookResponse> findBooks(Pageable pageable) {
-        Page<Book> books = bookRepository.findAll(pageable);
+    public List<BookResponse> findBooks() {
+        List<Book> books = bookRepository.findAll();
         List<BookResponse> bookResponses = books.stream()
                 .map(book -> {
                     Optional<Author> optionalAuthor = authorRepository.findById(book.getAuthorId());
