@@ -1,5 +1,6 @@
 package com.example.springjpaexercise.domain.entity;
 
+import com.example.springjpaexercise.domain.dto.ReviewResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,4 +25,14 @@ public class Review {
     @ManyToOne
     @JoinColumn(name = "hospital_id")
     private Hospital hospital;
+
+    public static ReviewResponse of(Review review, String message) {
+        return new ReviewResponse(
+                review.getId(),
+                review.getUserName(),
+                review.getTitle(),
+                review.getContent(),
+                message
+        );
+    }
 }

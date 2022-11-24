@@ -37,4 +37,11 @@ public class ReviewService {
                 "리뷰 등록 성공했습니다."
         );
     }
+
+    public ReviewResponse getOneReview(Integer id) {
+        Optional<Review> optionalReview = reviewRepository.findById(id);
+        Review review = optionalReview.get();
+        ReviewResponse reviewResponse = Review.of(review, id+"번 리뷰가 조회되었습니다.");
+        return reviewResponse;
+    }
 }
