@@ -19,7 +19,7 @@ public class HospitalService {
     }
 
     public HospitalResponse getHospital(Integer id) {
-        Optional<Hospital> optionalHospital =hospitalRepository.findById(id);
+        Optional<Hospital> optionalHospital = hospitalRepository.findById(id);
         Hospital hospital = optionalHospital.get();
         List<ReviewResponse> reviewResponses = hospital.getReviews().stream()
                 .map(review -> ReviewResponse.of(review, "리뷰가 조회되었습니다.")).collect(Collectors.toList());

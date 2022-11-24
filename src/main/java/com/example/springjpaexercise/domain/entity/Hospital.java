@@ -3,7 +3,6 @@ package com.example.springjpaexercise.domain.entity;
 import lombok.Getter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
