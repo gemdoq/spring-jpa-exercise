@@ -26,4 +26,7 @@ GET `/api/v1/reviews/{id}`
 
 ### 병원 Review 전체 조회
 GET `/api/v1/hospitals/{id}/reviews`
+
+### 병원 정보와 함께 Review 전체 조회
+GET `/api/v1/hospitals/{id}`
 - - -
