@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 public class ReviewRequest {
-    private Integer hospitalId;
     private String userName;
     private String title;
     private String content;

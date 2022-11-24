@@ -22,8 +22,8 @@ public class ReviewService {
         this.reviewRepository = reviewRepository;
     }
 
-    public ReviewResponse create(ReviewRequest reviewRequest) {
-        Optional<Hospital> hospital = hospitalRepository.findById(reviewRequest.getHospitalId());
+    public ReviewResponse create(Integer id, ReviewRequest reviewRequest) {
+        Optional<Hospital> hospital = hospitalRepository.findById(id);
         Review review = Review.builder()
                 .userName(reviewRequest.getUserName())
                 .title(reviewRequest.getTitle())
