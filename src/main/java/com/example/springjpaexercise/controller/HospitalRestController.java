@@ -1,5 +1,6 @@
 package com.example.springjpaexercise.controller;
 
+import com.example.springjpaexercise.domain.dto.HospitalResponse;
 import com.example.springjpaexercise.domain.dto.ReviewRequest;
 import com.example.springjpaexercise.domain.dto.ReviewResponse;
 import com.example.springjpaexercise.service.HospitalService;
@@ -29,5 +30,10 @@ public class HospitalRestController {
     @GetMapping("/{id}/reviews")
     public ResponseEntity<List<ReviewResponse>> getHospitalReviews(@PathVariable Integer id) {
         return ResponseEntity.ok().body(reviewService.getHospitalReviews(id));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<HospitalResponse> getHospital(@PathVariable Integer id) {
+        return ResponseEntity.ok().body(hospitalService.getHospital(id));
     }
 }
