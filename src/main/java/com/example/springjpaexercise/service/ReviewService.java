@@ -8,7 +8,9 @@ import com.example.springjpaexercise.repository.HospitalRepository;
 import com.example.springjpaexercise.repository.ReviewRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ReviewService {
@@ -43,5 +45,12 @@ public class ReviewService {
         Review review = optionalReview.get();
         ReviewResponse reviewResponse = Review.of(review, id+"번 리뷰가 조회되었습니다.");
         return reviewResponse;
+    }
+
+    public List<ReviewResponse> getHospitalReviews(Integer id) {
+        Optional<Hospital> optionalHospital = hospitalRepository.findById(id);
+        List<ReviewResponse> reviewResponses = optionalHospital.get().getReviews().stream()
+                .map(review -> ReviewResponse.of(review, id+"번 리뷰가 조회되었습니다.")).collect(Collectors.toList());
+        return reviewResponses;
     }
 }

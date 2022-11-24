@@ -7,6 +7,8 @@ import com.example.springjpaexercise.service.ReviewService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/hospitals")
 public class HospitalRestController {
@@ -22,5 +24,10 @@ public class HospitalRestController {
     @PostMapping("/{id}/reviews")
     public ResponseEntity<ReviewResponse> createReview(@PathVariable Integer id, @RequestBody ReviewRequest reviewRequest) {
         return ResponseEntity.ok().body(reviewService.create(reviewRequest));
+    }
+
+    @GetMapping("/{id}/reviews")
+    public ResponseEntity<List<ReviewResponse>> getHospitalReviews(@PathVariable Integer id) {
+        return ResponseEntity.ok().body(reviewService.getHospitalReviews(id));
     }
 }
