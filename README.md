@@ -5,9 +5,9 @@
 sudo sh deploy.sh {db.url} {db.username} {db.password} {port} {imagename} {imageversion}
 ```
 - - -
-## EC2 접속주소
+## 접속주소
 ```shell
-ec2-43-201-101-29.ap-northeast-2.compute.amazonaws.com:{port}
+124.51.20.250:{port}
 ```
 - - -
 ## Endpoint
