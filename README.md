@@ -2,12 +2,12 @@
 - - -
 ## 배포
 ```shell
-sudo sh deploy.sh {db.url} {db.username} {db.password} {port} {imagename} {imageversion}
+sudo sh deploy.sh {db.url} {db.username} {db.password} {port} {image.name} {image.version}
 ```
 - - -
 ## 접속주소
 ```shell
-124.51.20.250:{port}
+{AWS EC2 주소}:{port}
 ```
 - - -
 ## Endpoint
